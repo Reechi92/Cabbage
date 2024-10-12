@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapusta Official Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icons/favicons/cabbage.png" type="image/x-icon">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="wr-coin">
+                <img class="dollar-icon" src="icons/dollar-icon1.png" alt="dollar-icon">
+                <h1 class="titleCounter">0</h1>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-bar-inner"></div>
+            </div>
+            <div class="level">Уровень: 0</div>
+            <div class="info-tables">
+                <div class="info-table-item">
+                    <p class="earn-tap">Прибыль за тап: <br> <span class="e-tap">0</span></p>
+
+                </div>
+                <div class="info-table-item">
+                    <p class="earn-hour">Прибыль в час: <br> <span class="e-hour">0</span></p>
+
+                </div>
+            </div>
+            <div class="ranked-table">
+                    <p>No Rank</p>
+                    <span class="stolb"></span>
+                    <p class="coinsUp-text">Монет для апа: <br> <span class="change-number">10k</span> </p>
+            </div>
+            <div class="energy">
+                <p class="energy-item"><img class="flash-img" src="icons/flash.png" alt="flash"><span class="energy-unit">1500</span>/<span class="energy-capacity">1500</span></p>
+                <div class="speed-energy">
+                    <p class="boost"><img class="boost-rocket" src="icons/rocket.png" alt="rocket"> Ускорить</p>
+                </div>
+
+                
+            </div>
+            <div class="counter-btn">
+                <div><img src="img/kapusta4kNbg.png" alt="Kapusta"></div>
+                <div class="progress-value" id="progressValue">0</div>
+            </div>
+            <div class="left-panel">
+                <div class="left-panel-content">
+                    <div class="content-title">Улучшения</div>
+                    <div class="upgrade-item">
+                        <div class="icon-upgrade">
+                            <img src="icons/increase.png" alt="increase">
+                        </div>
+                        <p class="content-text">Повышение на 1 ед клика<br>Цена: <span class="price-text">100</span> монет</p>
+                        <p class="lvl-text">1 ур</p>
+                    </div>
+                    <div class="revenue-item">
+                        <div class="icon-revenue">
+                            <img src="icons/get-revenue.png" alt="get-revenue">
+                        </div>
+                        <p class="content-text-revenue">Прибыль <span class="number-hour">500</span> монет в час<br>Цена: <span class="price-hour">100</span> монет</p>
+                        <p class="lvl-revenue">1 ур</p>
+                    </div>
+                </div>
+            </div>
+            <div class="right-panel">
+                <div class="right-panel-content">
+                    <p class="right-title">Магазин</p>
+                    <div class="nav-bar">
+                        <div class="nav-item-one">Прибыль</div>
+                        <div class="nav-item-two">Маркетинг</div>
+                        <div class="nav-item-three">Разное</div>
+                    </div>
+                    <div class="shop-block">
+                        <div class="shop-block-content">
+                            <div class="shop-card">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/ogorod.png" alt="ogorod">
+                                    </div>
+                                    <p class="name-card">Огород</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour">
+                                            + 100 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price">1K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-two-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="img/kapusta4kNbg.png" alt="ogorod">
+                                    </div>
+                                    <p class="name-card">Ул. Капусты</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-twojs">
+                                            + 50 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-twojs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-twojs">500</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-three-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/farm.png" alt="farm">
+                                    </div>
+                                    <p class="name-card">Ферма</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-threejs">
+                                            + 150 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-threejs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-threejs">2K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-four-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/market.png" alt="market">
+                                    </div>
+                                    <p class="name-card">Рынок</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-fourjs">
+                                            + 200 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-fourjs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-fourjs">3K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-five-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/shop-80.png" alt="ogorod">
+                                    </div>
+                                    <p class="name-card">Магазин</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-fivejs">
+                                            + 300 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-fivejs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-fivejs">4K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-six-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/online-shop.png" alt="kapusta">
+                                    </div>
+                                    <p class="name-card">Интернет-магазин</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-sixjs">
+                                            + 500 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-sixjs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-sixjs">5K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-seven-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/factory.png" alt="ogorod">
+                                    </div>
+                                    <p class="name-card">Производство</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-sevenjs">
+                                            + 800 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-sevenjs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-sevenjs">8K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shop-card card-eight-js">
+                                <div class="card-content">
+                                    <div class="card-img">
+                                        <img class="shop-img" src="icons/shop/earn/corporation.png" alt="ogorod">
+                                    </div>
+                                    <p class="name-card">Корпорация</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour name-hour-eightjs">
+                                            + 1K в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="card-lvl card-lvl-eightjs">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="card-price card-price-eightjs">10K</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                             <!-- Marketing -->
+                            <div class="marketing-card m-n-js">
+                                <div class="content-ad">
+                                    <div class="card-ad">
+                                        <img class="ad-img" src="icons/shop/marketing/television.png" alt="TV-ad">
+                                    </div>
+                                    <p class="name-ad">TV Ad</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour n-h-js">
+                                            + 500 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="ad-lvl m-lvl-js">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="price-ad p-ad-js">2000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marketing-card m-two-js">
+                                <div class="content-ad">
+                                    <div class="card-ad">
+                                        <img class="ad-img" src="icons/shop/marketing/tiktok.png" alt="TV-ad">
+                                    </div>
+                                    <p class="name-ad">TikTok</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour two-h-js">
+                                            + 1000 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="ad-lvl two-lvl-js">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="price-ad two-price-js">4000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marketing-card m-three-js">
+                                <div class="content-ad">
+                                    <div class="card-ad">
+                                        <img class="ad-img" src="icons/shop/marketing/youtube.png" alt="TV-ad">
+                                    </div>
+                                    <p class="name-ad">YouTube</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour three-h-js">
+                                            + 2000 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="ad-lvl three-lvl-js">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="price-ad three-price-js">6000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="marketing-card m-four-js">
+                                <div class="content-ad">
+                                    <div class="card-ad">
+                                        <img class="ad-img" src="icons/shop/marketing/website.png" alt="TV-ad">
+                                    </div>
+                                    <p class="name-ad">Интернет-реклама</p>
+                                    <div class="card-container">
+                                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                                        <p class="name-hour four-h-js">
+                                            + 3000 в час
+                                        </p>
+                                    </div>
+                                    <div class="container-bottom">
+                                        <div class="ad-lvl four-lvl-js">1 ур</div>
+                                        <span class="vertical"></span>
+                                        <div class="card-wrapper">
+                                            <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon">
+                                            <div class="price-ad four-price-js">8000</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btns-panel">
+                <div class="btn-item">
+                    <img class="improve-img" src="icons/improvement.png" alt="improvement">
+                    <p class="improve-text">Улучшение</p>
+                </div>
+                <div class="btn-item">
+                    <img class="improve-img" src="icons/list.png" alt="list">
+                    <p class="improve-text">Задания</p>
+                </div>
+                <div class="btn-shop">
+                    <img class="improve-img" src="icons/shop.png" alt="shop">
+                    <p class="improve-text">Магазин</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="boost-modal">
+        <div class="boost-content">
+            <div class="cancel"><img class="cancel-img" src="icons/cancel.png" alt="cancel"></div>
+            <p class="balance">Ваш баланс</p>
+            <div class="boost-balance">
+                <img class="boost-dollar" src="icons/dollar-icon1.png" alt="dollar-icon">
+                <h1 class="boost-titleCounter">0</h1>
+            </div>
+            <p class="boost-text">Бесплатные ежедневные усиления</p>
+            <div class="energy-btn">
+                <img class="flash-img" src="icons/flash.png" alt="flash">
+                <div class="text-container">
+                    <p class="text-energy">Full Energy</p>
+                    <p class="text-boost"><span class="boost-unit">6</span>/<span class="boost-limit">6</span> доступно</p>
+                </div>
+            </div>
+            <p class="boost-text">Усилители</p>
+            <div class="energylimit-btn">
+                <img class="battery-img" src="icons/battery.png" alt="battery">
+                <div class="text-limit-container">
+                    <p class="text-limit">Energy limit</p>
+                    <div class="limit-container">
+                        <img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar">
+                        <p class="limit-price">2K</p>
+                        <p class="lvl-limit">1 lvl</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Поздравляем!</h2>
+            <p>Вы достигли нового уровня!</p>
+            <p class="info-lvl">Ваш уровень 0</p>
+        </div>
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
