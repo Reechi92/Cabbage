@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="description" content="Kapusta Official Clicker">
+    <meta name="theme-color" content="#0a0c1a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Kapusta Clicker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="icons/favicons/cabbage.png" type="image/x-icon">
+<script type="text/javascript" src="https://me.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=Shx57SZBhZeSdFS83qeWmCBLsnPveZVZnHZI1yF_W13vShuT25Pl_4XE8lzcL_DHPf2GVIwgCes3Hyuuhw2WmSGq91MgUu_HvG2HgEH0kcbr0lKj_grZMrbpyzLwRnXopgziLQbkghW0UdlH_8SefT9h452fUcn9cNozpMvIX_6ypgNZ8L1F8bu9K7YSKvqE3U-gi4Lbn30MpoONfNGh_ftZTOWC4cZu1dpNeYK-V9cA2_axOFSpdDqSHOiGoxt8VGx8SEsogRln2laHKwKiyfuivIBthYD6hrJbr2x92Wl4bMENcx51SLHp4UFTNMV4zKq9u-uJLFH9ufFcX5Qtc4scM3dPPorkDV2UmelzSPbmRtwzUJ7MR8zQEzCP6tzyQxmyxFrdDd5d6m9EYTIKvM6DcxwX_OK7_uNl0PmGRzZhk7GeCTst2fY45rMqO7xrHxg5fEWmmjrYD3B5w98UT2HOBDW6RIemhulVPiZaC31PpVe3IwV8LOyrLmoy3q_Ja-iheejifaPW5w1U1MV554QVUBgjAyl4EXvSH6rdOAPX8AQy4R927_umubQ7FUEvHPT6S0uF3KZRjtlq3CiJkwEErQcE2YiuDWqzwYtC9Y9_cvB2rpxx3jzHf1_EJPY8Z_mMh4yF8Wg3RapIHFp17g" charset="UTF-8"></script></head>
+<body>
+    <div class="game-wrapper">
+        <!-- Фоновая анимация капусты -->
+        <div class="bg-cabbages" id="bgCabbages"></div>
+
+        <div class="game-container">
+
+            <header class="main-header">
+                <div class="wr-coin">
+                    <div class="coin-icon-wrap">
+                        <img class="dollar-icon" src="icons/dollar-icon1.png" alt="Монета">
+                    </div>
+                    <h1 class="titleCounter">0</h1>
+                </div>
+
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar-inner"></div>
+                    <span class="progress-bar-text" id="progressBarText">0 / 10</span>
+                </div>
+                <div class="level">Уровень: <span class="level-num">0</span></div>
+
+                <div class="info-tables">
+                    <div class="info-table-item">
+                        <div class="info-icon-wrap">
+                            <img src="icons/increase.png" alt="Клик" class="info-icon">
+                        </div>
+                        <p class="earn-tap">Прибыль за тап<br><span class="e-tap">0</span></p>
+                    </div>
+                    <div class="info-table-item">
+                        <div class="info-icon-wrap">
+                            <img src="icons/get-revenue.png" alt="Доход" class="info-icon">
+                        </div>
+                        <p class="earn-hour">Прибыль в час<br><span class="e-hour">0</span></p>
+                    </div>
+                </div>
+
+                <div class="ranked-table">
+                    <div class="rank-icon-wrap">
+                        <img src="icons/shop/earn/corporation.png" alt="Ранг" class="rank-icon">
+                    </div>
+                    <p class="rank-name">No Rank</p>
+                    <span class="stolb"></span>
+                    <p class="coinsUp-text">Монет для апа:<br><span class="change-number">10k</span></p>
+                </div>
+
+                <div class="energy">
+                    <p class="energy-item">
+                        <div class="energy-icon-wrap">
+                            <img class="flash-img" src="icons/flash.png" alt="Энергия">
+                        </div>
+                        <span class="energy-unit">1500</span>/<span class="energy-capacity">1500</span>
+                    </p>
+                    <button class="speed-energy boost-btn" type="button">
+                        <div class="boost-icon-wrap">
+                            <img class="boost-rocket" src="icons/rocket.png" alt="Ракета">
+                        </div>
+                        Ускорить
+                    </button>
+                </div>
+            </header>
+
+            <main class="clicker-area" id="clickerBtn">
+                <div class="clicker-glow"></div>
+                <img src="img/kapusta4kNbg.png" alt="Капуста для клика" class="clicker-img">
+                <div class="progress-value" id="progressValue">+10</div>
+            </main>
+
+            <!-- Левая панель с крестиком -->
+            <aside class="left-panel" id="leftPanel">
+                <div class="panel-content">
+                    <button class="panel-close" type="button" aria-label="Закрыть">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <div class="content-title">Улучшения</div>
+                    <button class="upgrade-item" type="button" id="upgradeClickBtn">
+                        <div class="icon-upgrade"><img src="icons/increase.png" alt="Увеличение"></div>
+                        <div class="upgrade-info">
+                            <p class="content-text">Повышение на 1 ед клика</p>
+                            <p class="upgrade-price">Цена: <span class="price-text">100</span> монет</p>
+                        </div>
+                        <p class="lvl-text">1 ур</p>
+                    </button>
+                    <button class="revenue-item" type="button" id="upgradeRevenueBtn">
+                        <div class="icon-revenue"><img src="icons/get-revenue.png" alt="Доход"></div>
+                        <div class="upgrade-info">
+                            <p class="content-text-revenue">Прибыль <span class="number-hour">500</span> монет в час</p>
+                            <p class="upgrade-price">Цена: <span class="price-hour">100</span> монет</p>
+                        </div>
+                        <p class="lvl-revenue">1 ур</p>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Правая панель с крестиком -->
+            <aside class="right-panel" id="rightPanel">
+                <div class="panel-content">
+                    <button class="panel-close" type="button" aria-label="Закрыть">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                    </button>
+                    <p class="content-title">Магазин</p>
+                    <nav class="nav-bar">
+                        <button class="nav-item-one btn-active" type="button" data-tab="shop">Прибыль</button>
+                        <button class="nav-item-two" type="button" data-tab="marketing">Маркетинг</button>
+                        <button class="nav-item-three" type="button" data-tab="other">Разное</button>
+                    </nav>
+                    <div class="shop-block">
+                        <div class="shop-block-content">
+                            <article class="shop-card" data-card="garden"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/ogorod.png" alt="Огород" loading="lazy"></div><p class="name-card">Огород</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 100 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">1K</div></div></div></div></article>
+                            <article class="shop-card" data-card="cabbage"><div class="card-content"><div class="card-img"><img class="shop-img" src="img/kapusta4kNbg.png" alt="Ул. Капусты" loading="lazy"></div><p class="name-card">Ул. Капусты</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 50 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">500</div></div></div></div></article>
+                            <article class="shop-card" data-card="farm"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/farm.png" alt="Ферма" loading="lazy"></div><p class="name-card">Ферма</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 150 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">2K</div></div></div></div></article>
+                            <article class="shop-card" data-card="market"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/market.png" alt="Рынок" loading="lazy"></div><p class="name-card">Рынок</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 200 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">3K</div></div></div></div></article>
+                            <article class="shop-card" data-card="shop"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/shop-80.png" alt="Магазин" loading="lazy"></div><p class="name-card">Магазин</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 300 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">4K</div></div></div></div></article>
+                            <article class="shop-card" data-card="online"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/online-shop.png" alt="Интернет-магазин" loading="lazy"></div><p class="name-card">Интернет-магазин</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 500 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">5K</div></div></div></div></article>
+                            <article class="shop-card" data-card="factory"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/factory.png" alt="Производство" loading="lazy"></div><p class="name-card">Производство</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 800 в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">8K</div></div></div></div></article>
+                            <article class="shop-card" data-card="corp"><div class="card-content"><div class="card-img"><img class="shop-img" src="icons/shop/earn/corporation.png" alt="Корпорация" loading="lazy"></div><p class="name-card">Корпорация</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 1K в час</p></div><div class="container-bottom"><div class="card-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="card-price">10K</div></div></div></div></article>
+
+                            <article class="marketing-card" data-card="tv"><div class="content-ad"><div class="card-ad"><img class="ad-img" src="icons/shop/marketing/television.png" alt="TV Ad" loading="lazy"></div><p class="name-ad">TV Ad</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 500 в час</p></div><div class="container-bottom"><div class="ad-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="price-ad">2K</div></div></div></div></article>
+                            <article class="marketing-card" data-card="tiktok"><div class="content-ad"><div class="card-ad"><img class="ad-img" src="icons/shop/marketing/tiktok.png" alt="TikTok" loading="lazy"></div><p class="name-ad">TikTok</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 1000 в час</p></div><div class="container-bottom"><div class="ad-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="price-ad">4K</div></div></div></div></article>
+                            <article class="marketing-card" data-card="youtube"><div class="content-ad"><div class="card-ad"><img class="ad-img" src="icons/shop/marketing/youtube.png" alt="YouTube" loading="lazy"></div><p class="name-ad">YouTube</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 2000 в час</p></div><div class="container-bottom"><div class="ad-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="price-ad">6K</div></div></div></div></article>
+                            <article class="marketing-card" data-card="web"><div class="content-ad"><div class="card-ad"><img class="ad-img" src="icons/shop/marketing/website.png" alt="Интернет-реклама" loading="lazy"></div><p class="name-ad">Интернет-реклама</p><div class="card-container"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar" loading="lazy"></div><p class="name-hour">+ 3000 в час</p></div><div class="container-bottom"><div class="ad-lvl">1 ур</div><span class="vertical"></span><div class="card-wrapper"><div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar-icon" loading="lazy"></div><div class="price-ad">8K</div></div></div></div></article>
+
+                            <div class="text-other other-elem">Скоро...</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <nav class="btns-panel">
+                <button class="btn-item" type="button" id="openTasksBtn">
+                    <div class="nav-icon-wrap">
+                        <img class="improve-img" src="icons/list.png" alt="Задания">
+                    </div>
+                    <p class="improve-text">Задания</p>
+                </button>
+                <button class="btn-item" type="button" id="openUpgradeBtn">
+                    <div class="nav-icon-wrap">
+                        <img class="improve-img" src="icons/improvement.png" alt="Улучшение">
+                    </div>
+                    <p class="improve-text">Улучшение</p>
+                </button>
+                <button class="btn-shop" type="button" id="openShopBtn">
+                    <div class="nav-icon-wrap">
+                        <img class="improve-img" src="icons/shop.png" alt="Магазин">
+                    </div>
+                    <p class="improve-text">Магазин</p>
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Буст модалка -->
+    <div class="modal-overlay" id="boostModalOverlay">
+        <div class="boost-modal">
+            <div class="modal-handle"></div>
+            <button class="close-modal" type="button" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <p class="balance">Ваш баланс</p>
+            <div class="boost-balance">
+                <div class="coin-icon-wrap">
+                    <img class="boost-dollar" src="icons/dollar-icon1.png" alt="dollar-icon">
+                </div>
+                <h2 class="boost-titleCounter">0</h2>
+            </div>
+            <p class="boost-text">Бесплатные ежедневные усиления</p>
+            <button class="energy-btn" type="button" id="fullEnergyBtn">
+                <div class="energy-icon-wrap">
+                    <img class="flash-img" src="icons/flash.png" alt="flash">
+                </div>
+                <div class="text-container">
+                    <p class="text-energy">Full Energy</p>
+                    <p class="text-boost"><span class="boost-unit">6</span>/<span class="boost-limit">6</span> доступно</p>
+                </div>
+            </button>
+            <p class="boost-text">Усилители</p>
+            <button class="energylimit-btn" type="button" id="energyLimitBtn">
+                <div class="battery-icon-wrap">
+                    <img class="battery-img" src="icons/battery.png" alt="battery">
+                </div>
+                <div class="text-limit-container">
+                    <p class="text-limit">Energy limit</p>
+                    <div class="limit-container">
+                        <div class="mini-coin-wrap"><img class="dollar-limit" src="icons/dollar-icon1.png" alt="dollar"></div>
+                        <p class="limit-price">2K</p>
+                        <p class="lvl-limit">1 lvl</p>
+                    </div>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <!-- Задания модалка -->
+    <div class="modal-overlay" id="tasksModalOverlay">
+        <div class="bottom-sheet">
+            <div class="modal-handle"></div>
+            <button class="close-modal" type="button" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2 class="modal-title">Ежедневные задания</h2>
+            <div class="tasks-list" id="tasksList"></div>
+        </div>
+    </div>
+
+    <!-- Левел ап модалка -->
+    <div class="modal-overlay" id="myModalOverlay">
+        <div class="center-modal">
+            <button class="close-modal" type="button" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h2>Поздравляем!</h2>
+            <p>Вы достигли нового уровня!</p>
+            <p class="info-lvl">Ваш уровень 0</p>
+        </div>
+    </div>
+
+    <!-- Офлайн модалка -->
+    <div class="modal-overlay" id="offlineModalOverlay">
+        <div class="center-modal">
+            <h2 style="color: #FFCA0A;">С возвращением!</h2>
+            <p>Пока вас не было, ваша ферма заработала:</p>
+            <h3 id="offlineEarnings" style="font-size: 32px; color: #69F279; margin: 15px 0;">+0</h3>
+            <button class="close-modal claim-btn" type="button">Забрать</button>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+
+    <script src="js/script.js" defer></script>
+</body>
+</html>
